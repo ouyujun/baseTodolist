@@ -1,0 +1,11 @@
+<body>
+  <div id="myDIV" class="header">
+    <h2 style="margin:5px">My To Do List</h2>
+    <input type="text" id="myInput" placeholder="Title..." [(ngModel)]="this.inputValue">
+    <span (click)="newElement()" class="addBtn">Add</span>
+  </div>
+  
+  <ul id="myUL" *ngFor="let item of todo;let indexNum = index">
+    <li [class]="item.class ?'checked':'in-progress'"  (click)="addCheck(indexNum)">{{item.name}}<span class="close" (click)="onClickClose(indexNum)">X</span></li>
+  </ul>
+  </body>
